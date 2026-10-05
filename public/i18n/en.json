@@ -25,6 +25,7 @@
   "english": "EN",
   "spanish": "SP",
   "my_chords": "My Chords",
+  "instruction_label": "Instruction",
   "my_chords_empty_hint": "No chords yet — head to “Chords Guesser” to create some first.",
   "locked_nav_tooltip": "Guess at least two named chords first to unlock this",
   "guesser_button_disabled_hint": "Add at least two chords on the fretboard to guess them",

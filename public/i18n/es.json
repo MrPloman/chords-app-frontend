@@ -25,6 +25,7 @@
   "english": "IN",
   "spanish": "ES",
   "my_chords": "Mis Acordes",
+  "instruction_label": "Instrucción",
   "my_chords_empty_hint": "Todavía no hay acordes — andá a “Adivinador de Acordes” para crear algunos primero.",
   "locked_nav_tooltip": "Adiviná al menos dos acordes con nombre para desbloquear esto",
   "guesser_button_disabled_hint": "Agregá al menos dos acordes en el diapasón para adivinarlos",
