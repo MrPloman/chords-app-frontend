@@ -23,7 +23,7 @@
   padding: 20px;
   border: 1px dashed globalVars.$secondary-color;
   border-radius: 10px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--mat-sys-on-surface-variant);
   text-align: center;
   font-size: 15px;
 }
