@@ -20,6 +20,7 @@
         id="getProgressionButton"
         [loading]="chordsState?.loading ?? false"
         [disabled]="!allowedForProgressionStatus || !progressionForm.controls.prompt.value"
+        [disabledHint]="'progression_button_disabled_hint' | translate"
         [label]="'progression_button' | translate"
         [type]="'submit'"
         [icon]="'auto_awesome'"

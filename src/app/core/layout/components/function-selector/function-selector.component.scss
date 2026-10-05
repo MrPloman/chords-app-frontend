@@ -4,10 +4,20 @@
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
-  margin-top: 50px;
-  padding: 50px;
+  margin-top: 20px;
+  padding: 20px 50px;
+  .navButtonWrapper {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
   button {
     font-size: 20px;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  button:not([disabled]):hover {
+    transform: translateY(-2px);
   }
 }
 @media (max-width: 768px) {

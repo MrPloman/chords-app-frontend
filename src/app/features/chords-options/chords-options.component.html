@@ -19,6 +19,7 @@
         id="exchangeButton"
         [icon]="'cached'"
         [disabled]="!checkExchangeChordIsAvailable(chordsState)"
+        [disabledHint]="'exchanger_button_disabled_hint' | translate"
         [label]="'exchanger_button' | translate"
       ></app-submit-button>
     </div>

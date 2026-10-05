@@ -29,6 +29,7 @@
           (click)="getAllFormsChord(chordsState?.loading ?? false)"
           id="getAllFormsChord"
           [disabled]="disableRequestButton(chordsState?.loading ?? false)"
+          [disabledHint]="'handbook_get_chords_disabled_hint' | translate"
           [label]="'handbook_get_chords' | translate"
           [icon]="'search'"
         ></app-submit-button>
@@ -37,6 +38,7 @@
           id="addNewChord"
           [icon]="'add'"
           [disabled]="disableAddButton(chordsState?.loading ?? false, chordsState?.handbookChordsSelected ?? -1)"
+          [disabledHint]="'handbook_add_chord_disabled_hint' | translate"
           [label]="'handbook_add_chord' | translate"
         ></app-submit-button>
       </div>

@@ -19,6 +19,7 @@
       id="submitButton"
       [loading]="chordsState?.loading ?? false"
       [disabled]="!minimumChords"
+      [disabledHint]="'guesser_button_disabled_hint' | translate"
       [label]="'guesser_button' | translate"
     ></app-submit-button>
   </section>
