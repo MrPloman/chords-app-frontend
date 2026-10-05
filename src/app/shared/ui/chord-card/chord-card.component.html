@@ -30,14 +30,16 @@
         }
         @if (chord.name) {
           <span class="chordName">{{ chord.name }}</span>
+        } @else {
+          <span class="chordName unnamed">{{ 'chord_unnamed' | translate }}</span>
         }
       </header>
 
       <div class="chordStructure">
         @for (note of chord.notes; track trackById(noteId, note); let noteId = $index) {
           <span class="chordFigure">
-            <span class="stringNumber">{{ note.stringNumber }}th</span> -
-            <span class="notePosition">{{ note.position }}</span> -
+            <span class="stringNumber"><span class="lbl">{{ 'string_label' | translate }} </span>{{ note.stringNumber }}</span> ·
+            <span class="notePosition"><span class="lbl">{{ 'fret_label' | translate }} </span>{{ note.position }}</span> ·
             <span class="noteName">{{ note.name }}</span>
             @if (selectedMode() === 'guesser' && !chord.name) {
               <button

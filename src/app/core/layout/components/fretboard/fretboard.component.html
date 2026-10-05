@@ -1,5 +1,12 @@
 @let chordsState = chordsStore | async;
-<span class="scrollHint">{{ 'fretboard_scroll_hint' | translate }}</span>
+<div class="fretboardInfo">
+  <span class="caption">{{ 'fretboard_caption' | translate }}</span>
+  <span class="legend">
+    <span class="legendItem"><span class="swatch swatchMark"></span>{{ 'fretboard_legend_mark' | translate }}</span>
+    <span class="legendItem"><span class="swatch swatchSelected"></span>{{ 'fretboard_legend_selected' | translate }}</span>
+  </span>
+  <span class="scrollHint">{{ 'fretboard_scroll_hint' | translate }}</span>
+</div>
 <div class="fretboardWrapper">
   <div id="fretboard">
   @for (dot of currentDots; track $index; let indexDot = $index) {

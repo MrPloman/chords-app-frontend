@@ -1,12 +1,43 @@
 @use 'variables.scss' as globalVars;
 
-.scrollHint {
-  display: block;
+.fretboardInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 20px;
   max-width: 90%;
   margin: 0 auto;
-  text-align: right;
-  font-size: 12px;
+  font-size: 14px;
   color: globalVars.$secondary-color-solid;
+  .caption {
+    font-weight: 500;
+  }
+  .legend {
+    display: flex;
+    gap: 16px;
+  }
+  .legendItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .swatchMark {
+    background: #f3ead8;
+    border: 1px solid #a9906c;
+  }
+  .swatchSelected {
+    background: globalVars.$primary-color;
+  }
+  .scrollHint {
+    font-size: 12px;
+  }
 }
 
 .fretboardWrapper {
