@@ -6,6 +6,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { SelectedModeService } from '../services/SelectedMode/selected-mode-service';
 import { FretboardComponent } from './components/fretboard/fretboard.component';
 import { FunctionSelectorComponent } from './components/function-selector/function-selector.component';
+import { routeFadeAnimation } from './route-fade.animation';
 
 @Component({
   standalone: true,
@@ -13,6 +14,7 @@ import { FunctionSelectorComponent } from './components/function-selector/functi
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss'],
   imports: [FretboardComponent, FunctionSelectorComponent, LanguageSelectorComponent, TranslatePipe, RouterOutlet],
+  animations: [routeFadeAnimation],
 })
 export class MainLayoutComponent implements OnInit {
   public router = inject(Router);
@@ -26,5 +28,9 @@ export class MainLayoutComponent implements OnInit {
   }
   ngAfterViewInit(): void {
     if (this.router.url === '/') this.selectedModeService.setSelectedMode(undefined);
+  }
+
+  public prepareRoute(outlet: RouterOutlet): string {
+    return outlet?.isActivated ? outlet.activatedRoute.snapshot.url.join('/') : '';
   }
 }
