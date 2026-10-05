@@ -1,3 +1,4 @@
+import { TitleCasePipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import {
   FormControl,
@@ -16,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    TitleCasePipe,
   ],
   standalone: true,
   templateUrl: './input-selector.component.html',
