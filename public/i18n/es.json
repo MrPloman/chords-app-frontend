@@ -24,5 +24,9 @@
   "handbook_add_chord": "¡Añadir acorde!",
   "english": "IN",
   "spanish": "ES",
-  "my_chords": "Mis Acordes"
+  "my_chords": "Mis Acordes",
+  "aria_add_chord": "Agregar un acorde nuevo",
+  "aria_delete_chord": "Eliminar este acorde",
+  "aria_remove_note": "Quitar esta nota del acorde",
+  "aria_play_chord": "Reproducir el sonido de este acorde"
 }

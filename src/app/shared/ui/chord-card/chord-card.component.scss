@@ -14,9 +14,21 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
   h2 {
     font-size: 100px;
   }
+}
+.newChordButton:hover,
+.newChordButton:focus-visible {
+  border-color: globalVars.$primary-color;
+  transform: translateY(-2px);
+}
+.newChordButton:focus-visible {
+  outline: 2px solid globalVars.$primary-color;
+  outline-offset: 2px;
 }
 .chord {
   transition: 0.5s color;
@@ -43,6 +55,16 @@
     justify-content: space-between;
     .deleteButton {
       cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      font: inherit;
+      color: inherit;
+    }
+    .deleteButton:focus-visible,
+    .soundIcon:focus-visible {
+      outline: 2px solid globalVars.$primary-color;
+      outline-offset: 2px;
     }
     .chordName {
       font-size: 22px;
@@ -66,6 +88,8 @@
         margin-right: 10px;
       }
       .removeNote {
+        border: none;
+        font: inherit;
         background-color: globalVars.$warning-color;
         color: white;
         cursor: pointer;
@@ -77,6 +101,10 @@
       }
       .removeNote:hover {
         background-color: rgba(159, 3, 3, 0.589);
+      }
+      .removeNote:focus-visible {
+        outline: 2px solid globalVars.$primary-color;
+        outline-offset: 2px;
       }
     }
   }

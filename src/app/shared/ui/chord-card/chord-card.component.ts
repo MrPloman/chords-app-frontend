@@ -7,11 +7,12 @@ import { Chord } from '@app/domain/chords/models/chord.model';
 import { NotePosition } from '@app/domain/chords/models/note-position.model';
 import { FadeAndSlideDirective } from '@app/shared/directives/fade-and-slide/fade-and-slide.directive';
 import { chordsHelper } from '@app/shared/helpers/chords.helper';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-chord-card',
   standalone: true,
-  imports: [CommonModule, MatIconModule, FadeAndSlideDirective],
+  imports: [CommonModule, MatIconModule, FadeAndSlideDirective, TranslatePipe],
   templateUrl: './chord-card.component.html',
   styleUrl: './chord-card.component.scss',
 })

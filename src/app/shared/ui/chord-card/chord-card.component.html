@@ -1,6 +1,14 @@
 @switch (newChordUI) {
   @case (true) {
-    <article class="newChordButton" (click)="addNewChord()">
+    <article
+      class="newChordButton"
+      role="button"
+      tabindex="0"
+      [attr.aria-label]="'aria_add_chord' | translate"
+      (click)="addNewChord()"
+      (keydown.enter)="addNewChord()"
+      (keydown.space)="addNewChord(); $event.preventDefault()"
+    >
       <h2>+</h2>
     </article>
   }
@@ -11,7 +19,14 @@
           selectedMode() === 'guesser' ||
           (selectedMode() === 'progression' && currentChordsLength > minimumChordsToMakeProgression)
         ) {
-          <span class="deleteButton" (click)="deleteChord()">X</span>
+          <button
+            type="button"
+            class="deleteButton"
+            [attr.aria-label]="'aria_delete_chord' | translate"
+            (click)="deleteChord()"
+          >
+            X
+          </button>
         }
         @if (chord.name) {
           <span class="chordName">{{ chord.name }}</span>
@@ -25,13 +40,29 @@
             <span class="notePosition">{{ note.position }}</span> -
             <span class="noteName">{{ note.name }}</span>
             @if (selectedMode() === 'guesser' && !chord.name) {
-              <span class="removeNote" (click)="removeNote($index)">X</span>
+              <button
+                type="button"
+                class="removeNote"
+                [attr.aria-label]="'aria_remove_note' | translate"
+                (click)="removeNote($index)"
+              >
+                X
+              </button>
             }
             <br
           /></span>
         }
       </div>
-      <mat-icon class="soundIcon" svgIcon="music_note" (click)="makeChordSound()"></mat-icon>
+      <mat-icon
+        class="soundIcon"
+        svgIcon="music_note"
+        role="button"
+        tabindex="0"
+        [attr.aria-label]="'aria_play_chord' | translate"
+        (click)="makeChordSound()"
+        (keydown.enter)="makeChordSound()"
+        (keydown.space)="makeChordSound(); $event.preventDefault()"
+      ></mat-icon>
     </article>
   }
 }
