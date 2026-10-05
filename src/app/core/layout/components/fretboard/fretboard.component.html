@@ -1,5 +1,7 @@
 @let chordsState = chordsStore | async;
-<div id="fretboard">
+<span class="scrollHint">{{ 'fretboard_scroll_hint' | translate }}</span>
+<div class="fretboardWrapper">
+  <div id="fretboard">
   @for (dot of currentDots; track $index; let indexDot = $index) {
     <img
       class="dot"
@@ -27,13 +29,14 @@
     </div>
   }
 
-  <div class="positions">
-    @for (item of currentFretboard[0]; track $index; let indexItem = $index) {
-      <div class="fretPosition">
-        <span class="numberPosition">
-          {{ item.position }}
-        </span>
-      </div>
-    }
+    <div class="positions">
+      @for (item of currentFretboard[0]; track $index; let indexItem = $index) {
+        <div class="fretPosition">
+          <span class="numberPosition">
+            {{ item.position }}
+          </span>
+        </div>
+      }
+    </div>
   </div>
 </div>

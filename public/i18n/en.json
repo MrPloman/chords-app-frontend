@@ -25,6 +25,8 @@
   "english": "EN",
   "spanish": "SP",
   "my_chords": "My Chords",
+  "my_chords_empty_hint": "No chords yet — head to “Chords Guesser” to create some first.",
+  "fretboard_scroll_hint": "Scroll to see more frets →",
   "aria_add_chord": "Add a new chord",
   "aria_delete_chord": "Delete this chord",
   "aria_remove_note": "Remove this note from the chord",

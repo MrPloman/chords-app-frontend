@@ -13,12 +13,13 @@ import { NotePosition } from '@app/domain/chords/models/note-position.model';
 import { chordsHelper } from '@app/shared/helpers/chords.helper';
 
 import { select, Store } from '@ngrx/store';
+import { TranslatePipe } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-fretboard',
   standalone: true,
-  imports: [CommonModule, LayoutModule],
+  imports: [CommonModule, LayoutModule, TranslatePipe],
   templateUrl: './fretboard.component.html',
   styleUrl: './fretboard.component.scss',
 })

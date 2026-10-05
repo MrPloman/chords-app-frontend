@@ -25,6 +25,8 @@
   "english": "IN",
   "spanish": "ES",
   "my_chords": "Mis Acordes",
+  "my_chords_empty_hint": "Todavía no hay acordes — andá a “Adivinador de Acordes” para crear algunos primero.",
+  "fretboard_scroll_hint": "Deslizá para ver más trastes →",
   "aria_add_chord": "Agregar un acorde nuevo",
   "aria_delete_chord": "Eliminar este acorde",
   "aria_remove_note": "Quitar esta nota del acorde",
