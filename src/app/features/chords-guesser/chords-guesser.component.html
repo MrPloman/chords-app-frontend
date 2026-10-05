@@ -6,7 +6,11 @@
     @if (chordsState?.message) {
       <span id="message">{{ chordsState?.message }}</span>
     } @else {
-      <span id="message">{{ 'guesser_description' | translate }}</span>
+      <p class="subtitle">{{ 'guesser_subtitle' | translate }}</p>
+      <details class="howTo">
+        <summary>{{ 'how_it_works' | translate }}</summary>
+        <p>{{ 'guesser_description' | translate }}</p>
+      </details>
     }
   </section>
   <section id="chordsSection">

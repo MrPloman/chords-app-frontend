@@ -3,11 +3,6 @@
 <app-function-selector></app-function-selector>
 
 <app-fretboard></app-fretboard>
-@if (router.url === '/') {
-  <div id="message">
-    {{ 'forbidden_message_no_chords' | translate }}
-  </div>
-}
 <main [@routeFade]="prepareRoute(outlet)">
   <router-outlet #outlet="outlet" [routerOutletData]="selectedMode()"></router-outlet>
 </main>

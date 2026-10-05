@@ -3,8 +3,11 @@
 <form id="chordsOptions-container">
   <section id="optionsColumn">
     <h2 id="sectionTitle">{{ 'exchanger_title' | translate }}</h2>
-    <span id="message">{{ 'exchanger_description' | translate }}</span>
-    <app-chords-grid id="optionsChords"></app-chords-grid>
+    <p class="subtitle">{{ 'exchanger_subtitle' | translate }}</p>
+    <details class="howTo">
+      <summary>{{ 'how_it_works' | translate }}</summary>
+      <p>{{ 'exchanger_description' | translate }}</p>
+    </details>
     <div id="buttonsSection">
       <app-submit-button
         [loading]="chordsState?.loading ?? false"
@@ -23,6 +26,7 @@
         [label]="'exchanger_button' | translate"
       ></app-submit-button>
     </div>
+    <app-chords-grid id="optionsChords"></app-chords-grid>
   </section>
   <section id="chordsSection">
     <h3>{{ 'my_chords' | translate }}</h3>

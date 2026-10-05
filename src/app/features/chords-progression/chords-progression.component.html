@@ -7,7 +7,11 @@
     @if (chordsState?.message) {
       <span class="message">{{ chordsState?.message }}</span>
     } @else {
-      <span class="message">{{ 'progression_description' | translate }}</span>
+      <p class="subtitle">{{ 'progression_subtitle' | translate }}</p>
+      <details class="howTo">
+        <summary>{{ 'how_it_works' | translate }}</summary>
+        <p>{{ 'progression_description' | translate }}</p>
+      </details>
     }
     <form id="promptSection" [formGroup]="progressionForm">
       <app-input-instruction

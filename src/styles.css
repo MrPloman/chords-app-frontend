@@ -88,3 +88,31 @@ h2,
 h3 {
   font-family: 'Fraunces', serif;
 }
+
+/* One-line screen subtitle plus a collapsible long explanation. */
+.subtitle {
+  margin: 4px 0 8px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--mat-sys-on-surface-variant);
+}
+.howTo {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--mat-sys-on-surface-variant);
+}
+.howTo summary {
+  cursor: pointer;
+  width: fit-content;
+  color: var(--mat-sys-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.howTo summary:focus-visible {
+  outline: 2px solid var(--mat-sys-primary);
+  outline-offset: 2px;
+}
+.howTo p {
+  margin: 8px 0 0;
+  line-height: 1.6;
+}
