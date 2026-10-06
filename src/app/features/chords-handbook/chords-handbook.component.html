@@ -4,9 +4,12 @@
   <section id="handbookColumn">
     <h2 id="sectionTitle">{{ 'handbook_title' | translate }}</h2>
 
-    <span id="message">{{ 'handbook_description' | translate }}</span>
+    <p class="subtitle">{{ 'handbook_subtitle' | translate }}</p>
+    <details class="howTo">
+      <summary>{{ 'how_it_works' | translate }}</summary>
+      <p>{{ 'handbook_description' | translate }}</p>
+    </details>
 
-    <app-chords-grid id="handbookChords"></app-chords-grid>
     <form id="formSection" [formGroup]="chordRequestForm">
       <div id="inputSection">
         <app-input-selector
@@ -29,6 +32,7 @@
           (click)="getAllFormsChord(chordsState?.loading ?? false)"
           id="getAllFormsChord"
           [disabled]="disableRequestButton(chordsState?.loading ?? false)"
+          [disabledHint]="'handbook_get_chords_disabled_hint' | translate"
           [label]="'handbook_get_chords' | translate"
           [icon]="'search'"
         ></app-submit-button>
@@ -37,10 +41,12 @@
           id="addNewChord"
           [icon]="'add'"
           [disabled]="disableAddButton(chordsState?.loading ?? false, chordsState?.handbookChordsSelected ?? -1)"
+          [disabledHint]="'handbook_add_chord_disabled_hint' | translate"
           [label]="'handbook_add_chord' | translate"
         ></app-submit-button>
       </div>
     </form>
+    <app-chords-grid id="handbookChords"></app-chords-grid>
   </section>
   <section id="currentChordsColumn">
     <h3>{{ 'my_chords' | translate }}</h3>

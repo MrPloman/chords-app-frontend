@@ -1,6 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
 @import './fonts.scss';
 
+/*
+ * Cozy-vintage luthier workshop theme.
+ * Angular Material (M3) reads color/typography from these --mat-sys-* custom
+ * properties, so retinting them here reskins every Material component
+ * (buttons, selects, tooltips, spinner, toggle) without touching each one.
+ * Values are declared after the prebuilt azure-blue theme, so they win the
+ * cascade; see angular.json "styles" order.
+ */
+:root {
+  /* Surfaces: warm parchment instead of clinical white/grey */
+  --mat-sys-background: #f7efe1;
+  --mat-sys-on-background: #3b2e22;
+  --mat-sys-surface: #f7efe1;
+  --mat-sys-on-surface: #3b2e22;
+  --mat-sys-surface-variant: #eadfc9;
+  --mat-sys-on-surface-variant: #6b5a45;
+  --mat-sys-surface-bright: #fffbf3;
+  --mat-sys-surface-dim: #dccba9;
+  --mat-sys-surface-container-lowest: #fffbf3;
+  --mat-sys-surface-container-low: #f7efe1;
+  --mat-sys-surface-container: #f0e4ce;
+  --mat-sys-surface-container-high: #e8dac0;
+  --mat-sys-surface-container-highest: #e0d0b2;
+  --mat-sys-outline: #a9906c;
+  --mat-sys-outline-variant: #d8c7a5;
+  --mat-sys-inverse-surface: #3b2e22;
+  --mat-sys-inverse-on-surface: #f7efe1;
+  --mat-sys-inverse-primary: #e8b894;
+
+  /* Primary: burnt sienna, like a stained wood finish */
+  --mat-sys-primary: #a85c32;
+  --mat-sys-on-primary: #fff8f0;
+  --mat-sys-primary-container: #f0dcc3;
+  --mat-sys-on-primary-container: #5c2e0f;
+  --mat-sys-surface-tint: #a85c32;
+
+  /* Secondary: worn leather */
+  --mat-sys-secondary: #7a5b3d;
+  --mat-sys-on-secondary: #fff8f0;
+  --mat-sys-secondary-container: #e8dcc8;
+  --mat-sys-on-secondary-container: #4a3620;
+
+  /* Tertiary: aged brass, used sparingly */
+  --mat-sys-tertiary: #8c6a2f;
+  --mat-sys-on-tertiary: #fff8f0;
+  --mat-sys-tertiary-container: #f3e3be;
+  --mat-sys-on-tertiary-container: #4a3700;
+
+  /* Error: warm rust instead of a cold, clinical red */
+  --mat-sys-error: #9c3b2e;
+  --mat-sys-on-error: #fff8f0;
+  --mat-sys-error-container: #f4d9ce;
+  --mat-sys-on-error-container: #5c1e12;
+
+  /* Typography: a vintage serif for headings/labels, a clean sans for copy */
+  --mat-sys-display-large-font: 'Fraunces';
+  --mat-sys-display-medium-font: 'Fraunces';
+  --mat-sys-display-small-font: 'Fraunces';
+  --mat-sys-headline-large-font: 'Fraunces';
+  --mat-sys-headline-medium-font: 'Fraunces';
+  --mat-sys-headline-small-font: 'Fraunces';
+  --mat-sys-title-large-font: 'Fraunces';
+  --mat-sys-title-medium-font: 'Fraunces';
+  --mat-sys-title-small-font: 'Fraunces';
+  --mat-sys-label-large-font: 'Fraunces';
+}
+
 html,
 body {
   height: 100%;
@@ -9,7 +76,43 @@ body {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  background-color: var(--mat-sys-background);
+  color: var(--mat-sys-on-background);
 }
 body {
   margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Fraunces', serif;
+}
+
+/* One-line screen subtitle plus a collapsible long explanation. */
+.subtitle {
+  margin: 4px 0 8px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--mat-sys-on-surface-variant);
+}
+.howTo {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--mat-sys-on-surface-variant);
+}
+.howTo summary {
+  cursor: pointer;
+  width: fit-content;
+  color: var(--mat-sys-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.howTo summary:focus-visible {
+  outline: 2px solid var(--mat-sys-primary);
+  outline-offset: 2px;
+}
+.howTo p {
+  margin: 8px 0 0;
+  line-height: 1.6;
 }

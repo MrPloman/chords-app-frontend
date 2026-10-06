@@ -21,6 +21,40 @@
   font-style: normal;
   font-display: swap;
 }
+
+// Fraunces: warm serif used for headings and button labels to give the app
+// its "hand-lettered workshop sign" character. This is the "latin" static
+// instance Google Fonts serves for each weight out of the same variable font
+// file; browsers pick the right weight via the font-weight declared below.
+@font-face {
+  font-family: "Fraunces";
+  src: url("./assets/fonts/fraunces/fraunces-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("./assets/fonts/fraunces/fraunces-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("./assets/fonts/fraunces/fraunces-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("./assets/fonts/fraunces/fraunces-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 // @font-face {
 //   font-family: "Material Icons";
 //   font-style: normal;

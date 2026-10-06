@@ -3,6 +3,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-input-instruction',
   standalone: true,
@@ -11,6 +12,7 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
+    TranslatePipe,
   ],
   templateUrl: './input-instruction.component.html',
   styleUrl: './input-instruction.component.scss',

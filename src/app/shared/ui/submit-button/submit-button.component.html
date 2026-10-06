@@ -1,10 +1,18 @@
 <div class="button-container">
-  <button id="button" [disabled]="disabled || loading" mat-fab extended [type]="type">
-    <span class="label"> {{ label }} </span>
-    @if (loading) {
-      <mat-spinner id="spinner"></mat-spinner>
-    } @else {
-      <mat-icon class="icon" svgIcon="{{ icon }}"></mat-icon>
-    }
-  </button>
+  <!-- Disabled mat-fab buttons get pointer-events:none, so the tooltip has to live on a
+       hoverable wrapper span instead of the button itself, otherwise it would never fire. -->
+  <span
+    class="tooltipWrapper"
+    [matTooltip]="disabledHint"
+    [matTooltipDisabled]="!disabled || loading || !disabledHint"
+  >
+    <button id="button" [disabled]="disabled || loading" mat-fab extended [type]="type">
+      <span class="label"> {{ label }} </span>
+      @if (loading) {
+        <mat-spinner id="spinner"></mat-spinner>
+      } @else {
+        <mat-icon class="icon" svgIcon="{{ icon }}"></mat-icon>
+      }
+    </button>
+  </span>
 </div>

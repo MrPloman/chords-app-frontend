@@ -3,7 +3,8 @@ import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { selectAllowedForProgression, selectChordsAreGuessed } from '@app/application/chords/store/chords.selector';
 import { SelectedModeService } from '@app/core/services/SelectedMode/selected-mode-service';
 import { selectedModeType } from '@app/core/types/index.types';
@@ -11,7 +12,7 @@ import { select, Store } from '@ngrx/store';
 import { TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-function-selector',
-  imports: [MatButtonModule, MatDividerModule, MatIconModule, TranslatePipe, RouterLink, CommonModule],
+  imports: [MatButtonModule, MatDividerModule, MatIconModule, MatTooltipModule, TranslatePipe, RouterLink, RouterLinkActive, CommonModule],
   standalone: true,
   templateUrl: './function-selector.component.html',
   styleUrl: './function-selector.component.scss',

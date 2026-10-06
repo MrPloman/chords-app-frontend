@@ -2,32 +2,45 @@
 @let chordsGuessedStatus = chordsAreGuessed | async;
 
 <div class="button-container">
-  <button mat-fab extended (click)="selectOption('guesser')" [routerLink]="'guesser'">
+  <button mat-fab extended (click)="selectOption('guesser')" [routerLink]="'guesser'" routerLinkActive="active" ariaCurrentWhenActive="page">
     {{ 'guesser_title' | translate }}
     <mat-icon svgIcon="local_library"></mat-icon>
   </button>
-  <button mat-fab extended (click)="selectOption('handbook')" [routerLink]="'handbook'">
+  <button mat-fab extended (click)="selectOption('handbook')" [routerLink]="'handbook'" routerLinkActive="active" ariaCurrentWhenActive="page">
     {{ 'handbook_title' | translate }} <mat-icon svgIcon="book"></mat-icon>
   </button>
-  <button
-    [routerLink]="'options'"
-    mat-fab
-    extended
-    (click)="selectOption('options')"
-    [disabled]="!chordsGuessedStatus"
-    [routerLink]="'options'"
+  <!-- Disabled mat-fab buttons get pointer-events:none, so the tooltip has to live on a
+       hoverable wrapper span instead of the button itself, otherwise it would never fire. -->
+  <span
+    class="navButtonWrapper"
+    [matTooltip]="'locked_nav_tooltip' | translate"
+    [matTooltipDisabled]="!!chordsGuessedStatus"
   >
-    {{ 'exchanger_title' | translate }}
-    <mat-icon svgIcon="auto_stories"></mat-icon>
-  </button>
-  <button
-    mat-fab
-    extended
-    (click)="selectOption('progression')"
-    [routerLink]="'progression'"
-    [disabled]="!allowedForProgressionStatus"
+    <button [routerLink]="'options'" routerLinkActive="active" ariaCurrentWhenActive="page" mat-fab extended (click)="selectOption('options')" [disabled]="!chordsGuessedStatus">
+      {{ 'exchanger_title' | translate }}
+      <mat-icon svgIcon="auto_stories"></mat-icon>
+    </button>
+  </span>
+  <span
+    class="navButtonWrapper"
+    [matTooltip]="'locked_nav_tooltip' | translate"
+    [matTooltipDisabled]="!!allowedForProgressionStatus"
   >
-    {{ 'progression_title' | translate }}
-    <mat-icon svgIcon="auto_awesome"></mat-icon>
-  </button>
+    <button
+      mat-fab
+      extended
+      (click)="selectOption('progression')"
+      [routerLink]="'progression'" routerLinkActive="active" ariaCurrentWhenActive="page"
+      [disabled]="!allowedForProgressionStatus"
+    >
+      {{ 'progression_title' | translate }}
+      <mat-icon svgIcon="auto_awesome"></mat-icon>
+    </button>
+  </span>
 </div>
+@if (!chordsGuessedStatus || !allowedForProgressionStatus) {
+  <p class="navHint" role="status">
+    <mat-icon svgIcon="lock"></mat-icon>
+    {{ 'locked_nav_tooltip' | translate }}
+  </p>
+}

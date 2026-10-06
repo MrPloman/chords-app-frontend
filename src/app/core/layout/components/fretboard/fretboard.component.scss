@@ -1,17 +1,77 @@
 @use 'variables.scss' as globalVars;
-#fretboard {
-  border-top: 1px solid;
+
+.fretboardInfo {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 20px;
+  max-width: 90%;
+  margin: 28px auto 12px;
+  font-size: 14px;
+  color: globalVars.$secondary-color-solid;
+  .caption {
+    font-weight: 500;
+  }
+  .legend {
+    display: flex;
+    gap: 16px;
+  }
+  .legendItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .swatchMark {
+    background: #f3ead8;
+    border: 1px solid #a9906c;
+  }
+  .swatchSelected {
+    background: globalVars.$primary-color;
+  }
+  .scrollHint {
+    font-size: 12px;
+  }
+}
+
+.fretboardWrapper {
+  position: relative;
   max-width: 90%;
   margin: 0 auto;
-  overflow-x: scroll;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(227, 210, 174, 0), rgba(227, 210, 174, 0.95));
+  }
+}
+
+#fretboard {
+  border-top: 3px solid #3b2e22;
+  background-color: #e3d2ae;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: auto;
   position: relative;
-  margin-top: 50px;
+  margin-top: 10px;
   .dot {
     position: absolute;
     width: 25px;
     height: 25px;
+    // black dot asset recolored as a pearl inlay
+    filter: invert(1) sepia(0.35) brightness(0.97) drop-shadow(0 1px 1px rgba(59, 46, 34, 0.55));
   }
   .stringBoard {
     width: 2000px;
@@ -19,7 +79,7 @@
     flex-direction: row;
     .fret {
       position: relative;
-      border-left: 5px solid rgb(102, 102, 102);
+      border-left: 5px solid #8f7a58;
       min-width: 100px;
       height: 50px;
       display: flex;
@@ -28,7 +88,7 @@
       cursor: pointer;
       .noteName {
         margin-bottom: 15px;
-        color: rgba(0, 0, 0, 0.515);
+        color: rgba(59, 46, 34, 0.7);
         font-size: 12px;
       }
       .selected {
@@ -44,12 +104,12 @@
         width: 100%;
         position: absolute;
         height: 2px;
-        background-color: rgba(0, 0, 0, 0.064);
+        background-color: rgba(59, 46, 34, 0.38);
       }
     }
     .fret:first-of-type {
       min-width: 40px;
-      background-color: rgba(0, 0, 0, 0.462);
+      background-color: #3b2e22;
       .noteName {
         color: white;
       }
@@ -64,7 +124,7 @@
     .fretPosition {
       position: relative;
 
-      border-top: 2px solid rgb(59, 42, 5);
+      border-top: 2px solid #3b2e22;
 
       display: flex;
       min-width: 105px;
@@ -87,7 +147,7 @@
       width: 1000px;
 
       .fret {
-        border-left: 2.5px solid rgb(102, 102, 102);
+        border-left: 2.5px solid #8f7a58;
         min-width: 50px;
         height: 25px;
 
@@ -112,7 +172,7 @@
       width: 1000px;
 
       .fretPosition {
-        border-top: 1px solid rgb(59, 42, 5);
+        border-top: 1px solid #3b2e22;
         min-width: 52.5px;
         font-size: 10px;
       }

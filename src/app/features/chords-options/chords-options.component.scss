@@ -25,9 +25,8 @@
       margin-top: 1%;
       margin-bottom: 1%;
       font-size: 20px;
-      letter-spacing: 3.5px;
-      word-spacing: 20px;
-      line-height: 40px;
+      letter-spacing: 0.3px;
+      line-height: 1.6;
     }
     #optionsChords {
       display: flex;
@@ -52,7 +51,7 @@
     h3 {
       text-align: left;
       font-size: 40px;
-      color: rgba(0, 0, 0, 0.463);
+      color: var(--mat-sys-on-surface-variant);
     }
   }
 }
@@ -75,10 +74,9 @@
       }
       #message {
         width: 90%;
-        font-size: 12px;
-        letter-spacing: 1.5px;
-        word-spacing: 10px;
-        line-height: 20px;
+        font-size: 13px;
+        letter-spacing: 0.2px;
+        line-height: 1.6;
       }
       #optionsChords {
         margin-top: 2%;
@@ -104,7 +102,7 @@
       h3 {
         text-align: left;
         font-size: 30px;
-        color: rgba(0, 0, 0, 0.463);
+        color: var(--mat-sys-on-surface-variant);
       }
     }
   }

@@ -1,4 +1,7 @@
-$primary-color: rgb(0, 119, 130);
-
-$secondary-color: rgba(0, 115, 125, 0.266);
-$warning-color: rgba(232, 0, 0, 0.27);
+// Cozy-vintage luthier workshop palette: warm wood, worn leather, aged brass.
+$primary-color: #a8542e; // burnt sienna — selected/active accent, like a stained wood finish
+$secondary-color: rgba(122, 86, 55, 0.3); // leather brown, translucent — default borders & subtle fills
+$secondary-color-solid: #6e4a2d; // leather brown, opaque — default chord text/icon color (AA on parchment)
+$warning-color: rgba(156, 59, 46, 0.25); // warm rust, translucent — default "remove" affordance
+$warning-color-solid: #7a2e1f; // warm rust, opaque — "remove" hover state
+$muted-border-color: #c9ae86; // warm tan — neutral borders (e.g. the "new chord" card)

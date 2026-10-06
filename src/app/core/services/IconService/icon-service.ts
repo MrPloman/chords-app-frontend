@@ -26,6 +26,7 @@ export class IconService {
       'music_note',
       sanitizer.bypassSecurityTrustResourceUrl('../../assets/icons/music_note.svg')
     );
+    iconRegistry.addSvgIcon('lock', sanitizer.bypassSecurityTrustResourceUrl('../../assets/icons/lock.svg'));
     iconRegistry.addSvgIcon('search', sanitizer.bypassSecurityTrustResourceUrl('../../assets/icons/search.svg'));
     iconRegistry.addSvgIcon(
       'wand_shine',

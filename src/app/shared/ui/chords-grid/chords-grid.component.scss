@@ -17,6 +17,17 @@
     }
   }
 }
+.emptyHint {
+  width: 100%;
+  margin: 10px 0;
+  padding: 20px;
+  border: 1px dashed globalVars.$secondary-color;
+  border-radius: 10px;
+  color: var(--mat-sys-on-surface-variant);
+  text-align: center;
+  font-size: 15px;
+}
+
 #separation {
   display: flex;
   margin-top: 50px;

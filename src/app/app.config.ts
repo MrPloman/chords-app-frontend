@@ -1,6 +1,7 @@
 import { ApplicationConfig, isDevMode, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { AIHttpInterceptor } from '@app/core/interceptors/AiHttpInterceptor.interceptor';
 import { CHORDS_AI_PORT } from '@app/domain/chords/ports/chords.ports';
@@ -19,6 +20,7 @@ export const appConfig: ApplicationConfig = {
 
     provideHttpClient(withInterceptors([AIHttpInterceptor])),
     provideZoneChangeDetection({ eventCoalescing: true }),
+    provideAnimationsAsync(),
     provideRouter(routes, withComponentInputBinding()),
     provideStore({
       chords: chordsReducer,

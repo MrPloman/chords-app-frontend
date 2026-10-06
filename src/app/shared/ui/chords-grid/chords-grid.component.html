@@ -46,6 +46,9 @@
       @if (selectedMode() === 'guesser' && (chordsState?.currentChords?.length ?? 0) <= maxChords) {
         <app-chord-card [newChordUI]="true" (emitNewChord)="addNewChord($event)"></app-chord-card>
       }
+      @if (selectedMode() !== 'guesser' && (chordsState?.currentChords?.length ?? 0) === 0) {
+        <p class="emptyHint">{{ 'my_chords_empty_hint' | translate }}</p>
+      }
     </section>
   </div>
 </ng-template>

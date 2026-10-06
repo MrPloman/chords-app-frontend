@@ -4,10 +4,37 @@
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
-  margin-top: 50px;
-  padding: 50px;
+  margin-top: 20px;
+  padding: 20px 50px;
+  .navButtonWrapper {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
   button {
     font-size: 20px;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+  button.active {
+    outline: 3px solid var(--mat-sys-primary);
+    outline-offset: 3px;
+  }
+  button:not([disabled]):hover {
+    transform: translateY(-2px);
+  }
+}
+.navHint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 20px auto 24px;
+  font-size: 14px;
+  color: var(--mat-sys-on-surface-variant);
+  mat-icon {
+    width: 18px;
+    height: 18px;
   }
 }
 @media (max-width: 768px) {
