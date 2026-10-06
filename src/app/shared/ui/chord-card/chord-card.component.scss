@@ -53,7 +53,10 @@
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
     .deleteButton {
+      flex: 0 0 auto;
       cursor: pointer;
       border: none;
       background: none;
@@ -67,8 +70,17 @@
       outline-offset: 2px;
     }
     .chordName {
+      flex: 1 1 auto;
+      min-width: 0;
+      text-align: center;
+      overflow-wrap: anywhere;
       font-size: 22px;
       font-weight: 900;
+    }
+    .chordName.long {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.25;
     }
     .chordName.unnamed {
       font-size: 14px;
@@ -224,6 +236,9 @@
       }
       .chordName {
         font-size: 12px;
+      }
+      .chordName.long {
+        font-size: 9px;
       }
       .chordName.unnamed {
         font-size: 10px;

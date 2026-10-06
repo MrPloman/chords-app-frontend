@@ -29,7 +29,7 @@
           </button>
         }
         @if (chord.name) {
-          <span class="chordName">{{ chord.name }}</span>
+          <span class="chordName" [class.long]="chord.name.length > 8">{{ chord.name }}</span>
         } @else {
           <span class="chordName unnamed">{{ 'chord_unnamed' | translate }}</span>
         }
